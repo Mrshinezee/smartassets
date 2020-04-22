@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 const Footer = props => {
     return (
-        <div>
-           © 2020, Built with shinezee 
-        </div>
+        <footer className="flex justify-center m-2">
+            <div className="m-4">
+            © 2020, Built with shinezee 
+            </div>
+        </footer>
     );
 };
 
