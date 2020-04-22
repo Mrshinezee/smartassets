@@ -20,11 +20,8 @@ const Header = props => {
                 <div className="right-navbar mx-5 md:mx-0">
                     <h1 className="py-2 px-4">
                         <Link
+                            className="text-green-400 no-underline font-bold text-2xl"
                             to="/"
-                            style={{
-                                color: `white`,
-                                textDecoration: `none`,
-                            }}
                             >
                             SmartAssets
                         </Link>
