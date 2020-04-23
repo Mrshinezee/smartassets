@@ -37,4 +37,16 @@ button:focus {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
-  }
+}
+.loginContainer {
+  background-color: #ff6900;
+  height: 90vh;
+}
+.green-btn {
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #68d391;
+}
+
