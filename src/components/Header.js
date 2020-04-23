@@ -28,7 +28,7 @@ const Header = props => {
                     </h1>
                 </div>
                 <div className="left-navbar">
-                    <div className="float-right">
+                    <div className="flex justify-end items-center">
                         <Link className="m-1 py-2 px-4">Markets</Link>
                         <Link className="m-1 py-2 px-4">Log In</Link>
                         <Link className="m-1 py-2 px-4">Sign Up</Link>
