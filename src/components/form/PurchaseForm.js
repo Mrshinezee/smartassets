@@ -1,68 +1,80 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-import { loginUser } from '../actions/auth';
+// import { loginUser } from '../actions/auth';
 
-const loginValidation = Yup.object().shape({
-    email: Yup.string()
-      .email('Email is invalid')
-      .required('Email is required'),
-    password: Yup.string()
-      .min(8)
-      .max(16)
-      .required('Password is required'),
+const formValidation = Yup.object().shape({
+    amount: Yup.number()
+      .positive('value must be positive')
+      .required('Amount is required'),
+    price: Yup.number()
+      .positive('value must be positive')
+      .required('Price is required'),
+    total: Yup.number()
+      .positive('value must be positive')
+      .required('total is required'),
   });
 
-const Login = ({ dispatch, history}) => {
+const reusableForm = ({ dispatch, history, name}) => {
     const handleSubmit = ({ email, password }, { setSubmitting }) => {
-        dispatch(loginUser({ email, password, history }));
+        // dispatch(loginUser({ email, password, history }));
     
         setSubmitting(false);
       };
     return (
-        <div className="loginContainer">
-            <div className="loginTitle text-center pt-4 pb-2">
-                <h1 className="text-5xl font-thin tracking-wide p-2">Log In</h1>
-            </div>
+        <div className="purchaseContainer">
             <div className="formContainer flex justify-center">
                 <div className="loginForm flex justify-center w-3/4 sm:w-2/5">
                 <Formik
-            initialValues={{ email: '', password: '' }}
-            validationSchema={loginValidation}
+            initialValues={{ amount: 1, price: 0, total: 0 }}
+            validationSchema={formValidation}
             onSubmit={handleSubmit}
             >
             {({ isSubmitting }) => (
                 <Form className="flex justify-center flex-col items-center w-full p-5 md:p-8">
                 <div className="form-group m-2 w-full">
-                    <label htmlFor="email" className="mt-4">
-                        <span className="block">Email address:</span>
+                    <label htmlFor="amount" className="mt-4">
+                        <span className="block">Amount:</span>
                     </label>
                     <Field
-                        type="email"
-                        name="email"
+                        type="text"
+                        name="amount"
                         className="w-full h-auto sm:h-8"
                     />
                     <ErrorMessage
                     component="div"
-                    name="email"
+                    name="amount"
                     className="error-message"
                     />
                 </div>
                 <div className="form-group m-2 w-full">
-                    <label htmlFor="password" className="mt-4">
-                        <span className="block">Password:</span>
+                    <label htmlFor="price" className="mt-4">
+                        <span className="block">Price:</span>
                     </label>
                     <Field
-                        type="password"
-                        name="password"
+                        type="text"
+                        name="price"
                         className="w-full h-auto sm:h-8"
                     />
                     <ErrorMessage
                     component="div"
                     name="password"
+                    className="error-message"
+                    />
+                </div>
+                <div className="form-group m-2 w-full">
+                    <label htmlFor="total" className="mt-4">
+                        <span className="block">Total:</span>
+                    </label>
+                    <Field
+                        type="text"
+                        name="total"
+                        className="w-full h-auto sm:h-8"
+                    />
+                    <ErrorMessage
+                    component="div"
+                    name="total"
                     className="error-message"
                     />
                 </div>
@@ -72,13 +84,9 @@ const Login = ({ dispatch, history}) => {
                     className="green-btn px-10"
                     disabled={isSubmitting}
                     >
-                    Sign In
+                    {name}
                     </button>
                 </div>
-                <hr />
-                <Link className="text-center" to="/forgot-password">
-                    Forgot Password
-                </Link>
                 </Form>
             )}
             </Formik>
@@ -89,9 +97,4 @@ const Login = ({ dispatch, history}) => {
     );
 };
 
-Login.propTypes = {
-    history: PropTypes.shape({ push: PropTypes.func.isRequired }).isRequired,
-    dispatch: PropTypes.func.isRequired,
-};
-
-export default connect()(Login)
+export default reusableForm;
