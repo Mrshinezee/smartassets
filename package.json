@@ -9,10 +9,12 @@
     "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
     "formik": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",
+    "react-number-format": "^4.4.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
@@ -48,6 +50,7 @@
   },
   "devDependencies": {
     "postcss-cli": "^7.1.0",
+    "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6"
   }
 }

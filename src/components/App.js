@@ -7,16 +7,18 @@ import Login from '../pages/Login';
 import Dashboard from  '../pages/Dashboard';
 import Coin from '../pages/Coin';
 import store from '../store';
-import PublicRoute from '../partical/PublicRoute'
+import PublicRoute from '../partical/PublicRoute';
+import PrivateRoute from '../partical/PrivateRoute';
 
 const App = () => (
   <Provider store={store}>
     <Router>
       <Switch>
         <PublicRoute exact path="/" component={Home} />
-        <PublicRoute exact path="/board" component={Dashboard} />
+        <PrivateRoute exact path="/board" component={Dashboard} />
         <PublicRoute exact path="/login" component={Login} />
-        <PublicRoute exact path="/coin" component={Coin} />
+        <PrivateRoute exact path="/coin/:coinId" component={Coin} />
+        {/* <PrivateRoute exact path="/profile" component={Profile} /> */}
         <PublicRoute component={NotFound} />
       </Switch>
     </Router>

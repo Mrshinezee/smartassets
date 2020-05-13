@@ -45,10 +45,24 @@ import {
         //     localStorage.setItem('smartassets', `bearer ${token}`);
         // }
         toastr.success('Login Success');
-        history.push('/');
+        history.push('/board');
       })
       .catch(error => {
         dispatch(loginUserError(error));
         toastr.error(error.message);
       });
   };
+
+  // export const getCurrentUser = () => (dispatch, getState) => {
+  //   if (!getState().auth.user) {
+  //     dispatch(getCurrentUserRequest());
+  
+  //     auth.onAuthStateChanged(user => {
+  //       if (user !== null) {
+  //         dispatch(getCurrentUserSuccess(getUser(user)));
+  //       } else {
+  //         dispatch(getCurrentUserError());
+  //       }
+  //     });
+  //   }
+  // };
