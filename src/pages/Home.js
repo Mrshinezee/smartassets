@@ -1,11 +1,7 @@
 import React from 'react';
 import { MdExposureZero, MdBusinessCenter,MdSwapVerticalCircle } from "react-icons/md";
 import { FaBitcoin, FaTv, FaUnlockAlt } from "react-icons/fa";
-import BaseImage from './austin-distel-21GWwco-JBQ-unsplash.jpg'
 import logo from '../logo.svg';
-
-
-const homeBackgroundImage = { backgroundImage: "url(" + BaseImage + ")" }
 
 const Benefit = ({description, title,children}) => (
     <div className="p-4 m-2">
@@ -21,9 +17,8 @@ const Benefit = ({description, title,children}) => (
 export default () => (
   <div className="Home m-4">
 
-      <div style={{height: '70vh'}}>
+      <div className="landingImage bg-center bg-no-repeat bg-cover -m-4" style={{height: '70vh'}}>
         <div className="bg-fixed bg-cover" 
-        style={homeBackgroundImage}
         />
       </div>
 

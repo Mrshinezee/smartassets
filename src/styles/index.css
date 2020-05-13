@@ -4,7 +4,7 @@
 
 @import 'tailwindcss/utilities';
 
-.theme-light {
+/* .theme-light {
   --color-bg-primary: #fff;
   --color-bg-secondary: #f7fafc;
   --color-bg-ternary: #e2e8f0;
@@ -14,7 +14,7 @@
   --color-bg-primary: #000000;
   --color-bg-secondary: #000000;
   --color-bg-ternary: #1e3951;
-}
+} */
 
 body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
@@ -24,11 +24,35 @@ body {
   font-size: 16px;
   line-height: 1.375;
   margin: 0 auto;
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f7fafc;
+  --color-bg-ternary: #e2e8f0;
+  --color-input: #1a202c;
+
 }
 body.dark {
     background-color: #000000;
     color: white;
+    --color-bg-primary: #000000;
+    --color-bg-secondary: #000000;
+    --color-bg-ternary: #1e3951;
+    --color-input: #1a202c;
   }
+  .inputColor {
+    color: var(--color-input);
+    outline: 0;
+    border-color: var(--color-input);
+  }
+  .ashing{
+    background-color:#edf2f7;
+    color: hsla(0, 0%, 0%, 0.8);
+  }
+  .default-text {
+    color: #ff6900;
+  }
+.landingImage {
+  background-image: url("https://res.cloudinary.com/dowmiccxo/image/upload/v1588763358/test1.png");
+}
 
 button:focus {
   outline: 0;
@@ -48,5 +72,12 @@ code {
   padding-bottom: 0.5rem;
   border-radius: 0.25rem;
   background-color: #68d391;
+}
+.red-btn {
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: #fc8181;
 }
 

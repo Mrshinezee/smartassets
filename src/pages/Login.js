@@ -43,12 +43,12 @@ const Login = ({ dispatch, history}) => {
                     <Field
                         type="email"
                         name="email"
-                        className="w-full h-auto sm:h-8"
+                        className="inputColor w-full h-auto sm:h-8"
                     />
                     <ErrorMessage
                     component="div"
                     name="email"
-                    className="error-message"
+                    className="text-xs text-red-400"
                     />
                 </div>
                 <div className="form-group m-2 w-full">
@@ -58,12 +58,12 @@ const Login = ({ dispatch, history}) => {
                     <Field
                         type="password"
                         name="password"
-                        className="w-full h-auto sm:h-8"
+                        className="inputColor w-full h-auto sm:h-8"
                     />
                     <ErrorMessage
                     component="div"
                     name="password"
-                    className="error-message"
+                    className="text-xs text-red-400"
                     />
                 </div>
                 <div className="m-4">
