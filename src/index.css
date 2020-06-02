@@ -10849,6 +10849,20 @@ body.dark {
   background-image: url("https://res.cloudinary.com/dowmiccxo/image/upload/v1588763358/test1.png");
 }
 
+.depositFrame {
+  width: 560px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.resetOption {
+  -webkit-appearance: none;
+}
+
 button:focus {
   outline: 0;
 }

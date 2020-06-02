@@ -15,7 +15,7 @@ const PrivateRoute = ({ component: Component, isLoading, user, ...rest }) => {
       </PageLayout>
     );
   }
-
+console.log('isAuthenticated', isAuthenticated())
   return (
     <Route
       {...rest}
