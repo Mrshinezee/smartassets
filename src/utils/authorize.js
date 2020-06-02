@@ -18,9 +18,14 @@ export const isAuthenticated = () => {
     const bearer = bearerHeader.split(' ');
     const bearerToken = bearer[1];
     jwt.verify(bearerToken, 'secretKey', (err, decoded) => {
+        console.log('bearerToken', decoded , err)
         if (err) {
           return false;
         }
+        // else
+        // {
+        // return false;
+        // }
       });
     return true;
 }
